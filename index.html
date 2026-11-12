@@ -5,19 +5,17 @@
   Animacije: sve su u CSS bloku "Animacije" i rade preko klase .reveal.
   Ako ih ne želiš, obriši taj blok.
 
-  Tekst:
+  Tekst (sada stoji privremeni opšti tekst, zameniti kad Milica odgovori):
   1. Prilike, kolona 3: da li odnosi cveće na grob i šalje fotografiju
   2. Kako poručiti, korak 03: preuzimanje u radnji ili postavljanje na grob
-  3. O nama: od kada radi radnja
-  4. O nama: ko radi u radnji
-  5. O nama: šta joj je važno, njenim rečima
-  6. Kontakt: kako se nalazi radnja (kod kog ulaza, pored čega)
-  7. Članak o Orlovači: koliko je radnja udaljena od autobuske stanice
+  3. O nama: od kada radi radnja, ko radi u radnji, šta joj je važno
+  4. Kontakt: kako se nalazi radnja (kod kog ulaza, pored čega)
+  5. Članak o Orlovači: koliko je radnja udaljena od autobuske stanice
 
   Preuzeto sa njenog Google profila, potvrditi:
-  8. Telefon 060 533 7745 i da li je Viber na istom broju
-  9. Adresa: Groblje Orlovača, lokal 30
-  10. Nazivi proizvoda u ponudi (Okrugli venac, Venac srce, Beli venac na stalku,
+  6. Telefon 060 533 7745 i da li je Viber na istom broju
+  7. Adresa: Groblje Orlovača, lokal 30
+  8. Nazivi proizvoda u ponudi (Okrugli venac, Venac srce, Beli venac na stalku,
      Aranžman za grob, Aranžman u saksiji, Cveće za grob, Buket, Crystal Art ukrasi):
      kako ih ona zove
 
@@ -25,13 +23,13 @@
   i telefon uprave) provereni 12.11.2026. Proveriti ponovo pre objave.
 
   Fotografije koje fale:
-  11. Hero: fotografija radnje u većoj rezoluciji (sadašnja je široka 680 px)
-  12. Ponuda: cveće za grob, buket, Crystal Art ukras
-  13. Crystal Art: ukrasi na polici u radnji
-  14. Radovi: uređen grob, Crystal Art ukras, grob zimi
-  15. O nama: Milica u radnji, venac u izradi, polica sa ukrasima
-  16. Saveti: grob zimi, ulaz u groblje (kartice) i po jedna široka fotografija za svaki članak
-  17. Kontakt: mapa sa lokacijom radnje
+  9. Hero: fotografija radnje u većoj rezoluciji (sadašnja je široka 680 px)
+  10. Ponuda: cveće za grob, buket, Crystal Art ukras
+  11. Crystal Art: ukrasi na polici u radnji
+  12. Radovi: uređen grob, Crystal Art ukras, grob zimi
+  13. O nama: Milica u radnji, venac u izradi, polica sa ukrasima
+  14. Saveti: grob zimi, ulaz u groblje (kartice) i po jedna široka fotografija za svaki članak
+  15. Kontakt: mapa sa lokacijom radnje
 -->
 <html lang="sr-Latn">
 <head>
@@ -1360,11 +1358,12 @@
         display: inline-flex;
       }
 
+      /* Meni ide preko cele širine ekrana, tekst je 24px od ivice */
       .header__nav {
         position: absolute;
         top: 100%;
-        right: calc(-1 * var(--gutter));
-        left: calc(-1 * var(--gutter));
+        right: 0;
+        left: 0;
         display: none;
         flex-direction: column;
         align-items: stretch;
@@ -1388,6 +1387,10 @@
         padding: 14px 0;
         border-bottom: 1px solid var(--line);
         font-size: 17px;
+      }
+
+      .header__links li:last-child a {
+        border-bottom: 0;
       }
 
       .header__call {
@@ -1682,7 +1685,7 @@
             <li class="occasions__item reveal">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
               <h3 class="occasions__title">Kad ne možete da dođete</h3>
-              <p><span class="ph">[PROVERITI: da li odnosi cveće na grob i šalje fotografiju]</span></p>
+              <p>Pozovite nas ili pišite na Viber, pa ćemo se dogovoriti kako da vam pomognemo.</p>
             </li>
           </ul>
         </div>
@@ -1843,7 +1846,7 @@
             <li class="steps__item reveal">
               <span class="steps__num">03</span>
               <h3 class="steps__title">Venac je spreman</h3>
-              <p><span class="ph">[PROVERITI: preuzimanje u radnji ili postavljanje na grob]</span></p>
+              <p>Dogovorimo se kad je venac gotov i gde vam ga predajemo.</p>
             </li>
           </ol>
 
@@ -1860,9 +1863,8 @@
           <div class="about__text reveal">
             <span class="eyebrow">O nama</span>
             <h2 class="section__title" id="o-nama-naslov">Cvećara Milica</h2>
-            <p>Na Orlovači smo od <span class="ph">[OD KADA RADI]</span>. U radnji vas dočeka <span class="ph">[KO RADI U RADNJI]</span>.</p>
-            <p>Pošto smo odmah pored groblja, venac ne morate da vozite kroz grad. Pogledate ga u radnji i ponesete pravo do kapele.</p>
-            <p><span class="ph">[ŠTA JOJ JE VAŽNO, NJENIM REČIMA]</span></p>
+            <p>Naša radnja je na Orlovači, odmah pored groblja.</p>
+            <p>Venac zato ne morate da vozite kroz grad. Pogledate ga u radnji i ponesete pravo do kapele.</p>
 
             <div class="about__hours">
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
@@ -1990,8 +1992,7 @@
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <div>
                   <span class="contact__label">Adresa</span>
-                  <span class="contact__value">Groblje Orlovača, lokal 30, Beograd</span><br>
-                  <span class="ph">[KAKO NAS NAĆI: kod kog ulaza je radnja]</span>
+                  <span class="contact__value">Groblje Orlovača, lokal 30, Beograd</span>
                 </div>
               </li>
               <li class="contact__row">
@@ -2274,7 +2275,7 @@
             </blockquote>
 
             <p>Kolima dolazite Ibarskom magistralom. Uprava groblja radi od 7 do 15h, osim nedeljom, a telefon je 011 2560 704.</p>
-            <p>Naša radnja je u lokalu 30. Od autobuske stanice do nas ima <span class="ph">[KOLIKO JE RADNJA OD STANICE]</span>. Radimo svaki dan od 7 do 14h, i nedeljom.</p>
+            <p>Naša radnja je u lokalu 30. Radimo svaki dan od 7 do 14h, i nedeljom.</p>
             <p>Ako dolazite na sahranu ili pomen, pozovite nas pre nego što krenete. Venac ili aranžman dogovorimo dok ste još na putu.</p>
 
             <p class="article__sign">Cvećara Milica, kod groblja Orlovača</p>
