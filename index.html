@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<!--
+  PROVERITI SA MILICOM
+
+  Animacije: sve su u CSS bloku "Animacije" i rade preko klase .reveal.
+  Ako ih ne želiš, obriši taj blok.
+
+  Tekst:
+  1. Prilike, kolona 3: da li odnosi cveće na grob i šalje fotografiju
+  2. Kako poručiti, korak 03: preuzimanje u radnji ili postavljanje na grob
+  3. O nama: od kada radi radnja
+  4. O nama: ko radi u radnji
+  5. O nama: šta joj je važno, njenim rečima
+  6. Kontakt: kako se nalazi radnja (kod kog ulaza, pored čega)
+  7. Članak o Orlovači: koliko je radnja udaljena od autobuske stanice
+
+  Preuzeto sa njenog Google profila, potvrditi:
+  8. Telefon 060 533 7745 i da li je Viber na istom broju
+  9. Adresa: Groblje Orlovača, lokal 30
+  10. Nazivi proizvoda u ponudi (Okrugli venac, Venac srce, Beli venac na stalku,
+     Aranžman za grob, Aranžman u saksiji, Cveće za grob, Buket, Crystal Art ukrasi):
+     kako ih ona zove
+
+  Podaci o groblju u članku o Orlovači (linije 502, 531, 532, 533, radno vreme
+  i telefon uprave) provereni 12.11.2026. Proveriti ponovo pre objave.
+
+  Fotografije koje fale:
+  11. Hero: fotografija radnje u većoj rezoluciji (sadašnja je široka 680 px)
+  12. Ponuda: cveće za grob, buket, Crystal Art ukras
+  13. Crystal Art: ukrasi na polici u radnji
+  14. Radovi: uređen grob, Crystal Art ukras, grob zimi
+  15. O nama: Milica u radnji, venac u izradi, polica sa ukrasima
+  16. Saveti: grob zimi, ulaz u groblje (kartice) i po jedna široka fotografija za svaki članak
+  17. Kontakt: mapa sa lokacijom radnje
+-->
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cvećara Milica | Venci i cveće kod groblja Orlovača, Beograd</title>
+  <!-- Demo: Google ne prikazuje ovu stranu u pretrazi. Obriši ovaj red kad sajt postane pravi. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Venci, aranžmani i Crystal Art ukrasi u radnji pored groblja Orlovača. Radimo svaki dan od 7 do 14h. Pozovite ili pišite na Viber.">
+  <!-- Klasa "js" uključuje animacije. Bez JS-a sav sadržaj je odmah vidljiv. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== Varijable ========== */
+    :root {
+      /* Boje */
+      --bg: #F4F0E9;
+      --bg-alt: #E9E2D6;
+      --dark: #2B2B27;
+      --text: #33322E;
+      --light: #F3EEE5;
+      --accent: #4E5A2C;
+      --accent-hover: #3D4722;
+      --field: #FBF9F5;
+      --white: #FFFFFF;
+      --line: rgba(43, 43, 39, 0.15);
+      --line-strong: rgba(43, 43, 39, 0.35);
+      --line-on-dark: rgba(243, 238, 229, 0.2);
+      --ph-bg: #D9D4CB;
+      --ph-text: #6B675F;
+
+      /* Fontovi */
+      --font-head: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
+
+      /* Razmaci */
+      --section-y: 112px;
+      --container: 1100px;
+      --gutter: 24px;
+      --radius: 4px;
+      --header-h: 76px;
+    }
+
+    /* ========== Osnova ========== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--font-head);
+      font-weight: 500;
+      line-height: 1.1;
+      color: var(--dark);
+    }
+
+    p {
+      max-width: 65ch;
+      margin: 0 0 1em;
+    }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -60px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    .skip:focus {
+      top: 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: calc(var(--container) + 2 * var(--gutter));
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .section {
+      padding: var(--section-y) 0;
+      scroll-margin-top: var(--header-h);
+    }
+
+    .section--alt {
+      background: var(--bg-alt);
+    }
+
+    .section__head {
+      margin-bottom: 56px;
+    }
+
+    .section__title {
+      margin-bottom: 20px;
+      font-size: 44px;
+    }
+
+    .section__head p:last-child {
+      margin-bottom: 0;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 16px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* Placeholder u tekstu */
+    .ph {
+      padding: 1px 6px;
+      border-radius: 2px;
+      background: var(--ph-bg);
+      color: var(--text);
+      font-size: 0.92em;
+    }
+
+    /* Placeholder umesto fotografije */
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: var(--ph-bg);
+      color: var(--ph-text);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.15em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Ikonice */
+    .icon {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      color: var(--accent);
+    }
+
+    .icon--sm {
+      width: 18px;
+      height: 18px;
+    }
+
+    .icon--xs {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ========== Dugmad i linkovi ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .btn .icon {
+      color: inherit;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--light);
+    }
+
+    .btn--primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .btn--outline {
+      background: transparent;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn--outline:hover {
+      background: var(--accent);
+      color: var(--light);
+    }
+
+    .btn--light {
+      background: var(--light);
+      border-color: var(--light);
+      color: var(--dark);
+    }
+
+    .btn--light:hover {
+      background: var(--bg-alt);
+      border-color: var(--bg-alt);
+    }
+
+    .btn--outline-light {
+      background: transparent;
+      border-color: var(--light);
+      color: var(--light);
+    }
+
+    .btn--outline-light:hover {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .link:hover {
+      color: var(--accent-hover);
+    }
+
+    .link .icon {
+      color: inherit;
+    }
+
+    .reading {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    /* ========== Header ========== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header__inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      height: var(--header-h);
+    }
+
+    .header__logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    .header__name {
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--dark);
+    }
+
+    .header__tagline {
+      margin-top: 4px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--text);
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .header__links {
+      display: flex;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .header__links a {
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .header__links a:hover {
+      color: var(--accent);
+    }
+
+    .header__call {
+      padding: 11px 20px;
+    }
+
+    .header__toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+
+    .header__toggle .icon {
+      color: var(--dark);
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 85vh;
+      overflow: hidden;
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(43, 43, 39, 0.6);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: var(--section-y);
+      padding-bottom: var(--section-y);
+    }
+
+    .hero__text {
+      max-width: 600px;
+    }
+
+    .hero .eyebrow {
+      color: var(--light);
+    }
+
+    .hero__title {
+      margin-bottom: 24px;
+      font-size: 64px;
+      line-height: 1.05;
+      color: var(--light);
+    }
+
+    .hero__lead {
+      margin-bottom: 36px;
+      font-size: 19px;
+    }
+
+    /* Traka sa činjenicama ispod hera */
+    .facts {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .facts__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .facts__item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 32px;
+      border-left: 1px solid var(--line);
+      font-size: 16px;
+      color: var(--dark);
+    }
+
+    .facts__item:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .facts__item:last-child {
+      padding-right: 0;
+    }
+
+    /* ========== Prilike ========== */
+    .occasions__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .occasions__item {
+      padding: 0 40px;
+      border-left: 1px solid var(--line);
+    }
+
+    .occasions__item:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .occasions__item:last-child {
+      padding-right: 0;
+    }
+
+    .occasions__item .icon {
+      margin-bottom: 24px;
+    }
+
+    .occasions__title {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .occasions__item p {
+      margin: 0;
+    }
+
+    /* ========== Ponuda ========== */
+    .offer__tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 32px;
+      margin: 0 0 40px;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .offer__tab {
+      padding: 4px 0;
+      background: none;
+      border: 0;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 8px;
+      cursor: pointer;
+    }
+
+    .offer__tab:hover {
+      color: var(--accent);
+    }
+
+    .offer__tab.is-active {
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration-color: var(--accent);
+    }
+
+    .offer__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .offer__card {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .offer__media {
+      display: block;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--ph-bg);
+    }
+
+    .offer__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .offer__media.placeholder {
+      display: flex;
+    }
+
+    .offer__name {
+      display: block;
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .offer__price {
+      display: block;
+      margin-top: 2px;
+      font-size: 15px;
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    .offer__card:hover .offer__name {
+      color: var(--accent);
+    }
+
+    /* ========== Crystal Art ========== */
+    .crystal__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .crystal__media {
+      aspect-ratio: 4 / 5;
+    }
+
+    /* ========== Radovi (galerija) ========== */
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .gallery__item {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--ph-bg);
+    }
+
+    .gallery__item img,
+    .gallery__item .placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Jedini dozvoljeni prelaz: tamno dno fotografije, da natpis bude čitljiv */
+    .gallery__item--photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(43, 43, 39, 0.8) 0%, rgba(43, 43, 39, 0) 50%);
+      pointer-events: none;
+    }
+
+    .gallery__caption {
+      position: absolute;
+      right: 20px;
+      bottom: 18px;
+      left: 20px;
+      z-index: 1;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .gallery__item--ph .gallery__caption {
+      color: var(--dark);
+    }
+
+    /* ========== Kako poručiti ========== */
+    .steps__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps__item {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .steps__num {
+      display: block;
+      margin-bottom: 20px;
+      font-family: var(--font-head);
+      font-size: 48px;
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .steps__title {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .steps__item p {
+      margin: 0;
+    }
+
+    .steps__cta {
+      margin-top: 56px;
+    }
+
+    /* ========== O nama ========== */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about__hours {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin: 32px 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .about__hours-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .about__hours-value {
+      color: var(--dark);
+    }
+
+    /* Kolaž: 4 slike stepenasto, svaka preklapa susednu 40px */
+    .about__collage {
+      display: flex;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0 0 80px;
+      list-style: none;
+    }
+
+    .about__photo {
+      position: relative;
+      flex: 0 0 calc((100% + 120px) / 4);
+      min-width: 0;
+      margin-left: -40px;
+      padding: 8px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .about__photo:nth-child(1) {
+      z-index: 1;
+      margin-left: 0;
+    }
+
+    .about__photo:nth-child(2) {
+      z-index: 2;
+      margin-top: 64px;
+    }
+
+    .about__photo:nth-child(3) {
+      z-index: 3;
+      margin-top: 24px;
+    }
+
+    .about__photo:nth-child(4) {
+      z-index: 4;
+      margin-top: 80px;
+    }
+
+    .about__frame {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+    }
+
+    .about__frame img,
+    .about__frame.placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about__frame.placeholder {
+      padding: 8px;
+    }
+
+    /* Tekst ostaje u delu koji susedna slika ne pokriva */
+    .about__photo:not(:last-child) .about__frame.placeholder {
+      padding-right: 48px;
+    }
+
+    /* ========== Saveti (kartice) ========== */
+    .tips__list {
+      display: grid;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tips__card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      background: var(--bg);
+      border: 1px solid var(--line);
+    }
+
+    .tips__media {
+      position: relative;
+      min-height: 260px;
+      overflow: hidden;
+      background: var(--ph-bg);
+    }
+
+    .tips__media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tips__body {
+      display: flex;
+      flex-direction: column;
+      padding: 36px 40px;
+    }
+
+    .tips__title {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .tips__title a {
+      text-decoration: none;
+    }
+
+    .tips__title a:hover {
+      color: var(--accent);
+    }
+
+    .tips__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    /* ========== Stranica članka ========== */
+    .article {
+      padding: 64px 0 var(--section-y);
+    }
+
+    .article__top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+      margin-bottom: 56px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .article__crumbs a {
+      text-decoration: none;
+    }
+
+    .article__crumbs a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .article__crumbs [aria-current] {
+      color: var(--dark);
+    }
+
+    .article__share {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      background: none;
+      border: 0;
+      font: inherit;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .article__share:hover {
+      color: var(--accent);
+    }
+
+    .article__head,
+    .article__body {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .article__meta-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .article__meta-row .eyebrow {
+      margin: 0;
+    }
+
+    .article__title {
+      margin-bottom: 20px;
+      font-size: 52px;
+      line-height: 1.08;
+    }
+
+    .article__byline {
+      margin-bottom: 48px;
+      font-size: 14px;
+    }
+
+    .article__media {
+      aspect-ratio: 16 / 9;
+      margin-bottom: 56px;
+    }
+
+    .article__body {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .article__body p {
+      margin-bottom: 1.2em;
+    }
+
+    .article__quote {
+      margin: 40px 0;
+      padding-left: 24px;
+      border-left: 2px solid var(--accent);
+      font-family: var(--font-head);
+      font-size: 26px;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--dark);
+    }
+
+    .article__quote p {
+      margin: 0;
+    }
+
+    .article__sign {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-head);
+      font-size: 22px;
+      color: var(--dark);
+    }
+
+    .article__actions {
+      margin-top: 32px;
+    }
+
+    .article__back {
+      margin-top: 32px;
+    }
+
+    /* ========== Kontakt i upit ========== */
+    .contact__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact__list {
+      margin: 32px 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .contact__row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact__label {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .contact__value {
+      color: var(--dark);
+    }
+
+    .contact__value a {
+      text-decoration: none;
+    }
+
+    .contact__map {
+      aspect-ratio: 16 / 10;
+      margin-top: 40px;
+    }
+
+    .form {
+      padding: 40px;
+      border: 1px solid var(--line);
+    }
+
+    .form__title {
+      margin-bottom: 8px;
+      font-size: 28px;
+    }
+
+    .form__intro {
+      margin-bottom: 28px;
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form__field {
+      margin-bottom: 20px;
+    }
+
+    .form__label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .form__input {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--field);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--dark);
+    }
+
+    .form__input:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .form__input::placeholder {
+      color: var(--ph-text);
+    }
+
+    select.form__input {
+      appearance: none;
+      padding-right: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%234E5A2C' stroke-width='1.5'/%3E%3C/svg%3E");
+      background-position: right 14px center;
+      background-repeat: no-repeat;
+    }
+
+    textarea.form__input {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form__note {
+      max-width: none;
+      margin: 16px 0 0;
+      padding: 12px 16px;
+      background: var(--bg-alt);
+      border-left: 2px solid var(--accent);
+      font-size: 15px;
+      color: var(--dark);
+    }
+
+    /* ========== Završna traka ========== */
+    .closing {
+      padding: 96px 0;
+      background: var(--bg-alt);
+      color: var(--text);
+    }
+
+    .closing__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .closing__text {
+      max-width: 30ch;
+      margin: 0;
+      font-family: var(--font-head);
+      font-size: 34px;
+      line-height: 1.25;
+      color: var(--dark);
+    }
+
+    /* ========== Footer ========== */
+    .footer {
+      padding: 72px 0 32px;
+      background: var(--dark);
+      color: var(--light);
+      font-size: 15px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer__name {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .footer__heading {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(243, 238, 229, 0.7);
+    }
+
+    .footer p {
+      margin: 0 0 6px;
+    }
+
+    .footer__links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer__links li {
+      margin-bottom: 6px;
+    }
+
+    .footer a {
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line-on-dark);
+      font-size: 14px;
+      color: rgba(243, 238, 229, 0.75);
+    }
+
+    /* ========== Donja traka na mobilnom ========== */
+    .mobile-bar {
+      display: none;
+    }
+
+    /* ========== Animacije ========== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Hero se pojavi pri učitavanju, deo po deo */
+    .hero__text > * {
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .hero__text > *:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .hero__text > *:nth-child(3) {
+      animation-delay: 0.24s;
+    }
+
+    .hero__text > *:nth-child(4) {
+      animation-delay: 0.36s;
+    }
+
+    /* Elementi sa klasom .reveal se pojave kad uđu u ekran */
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Kolone ulaze jedna za drugom */
+    .js li.reveal:nth-child(3n + 2),
+    .js .crystal__text.reveal,
+    .js .about__collage.reveal,
+    .js .form.reveal {
+      transition-delay: 0.1s;
+    }
+
+    .js li.reveal:nth-child(3n + 3) {
+      transition-delay: 0.2s;
+    }
+
+    /* Početna i članci se smenjuju sa fade efektom */
+    .home,
+    .article {
+      animation: fadeIn 0.4s ease-out both;
+    }
+
+    /* Kartice u ponudi kad se promeni filter */
+    .offer__item {
+      animation: fadeUp 0.45s ease-out both;
+    }
+
+    /* Poruka posle slanja forme */
+    .form__note {
+      animation: fadeIn 0.4s ease-out both;
+    }
+
+    /* Fotografije se blago uvećaju na hover */
+    .offer__media img,
+    .gallery__item img {
+      transition: transform 0.6s ease-out;
+    }
+
+    .offer__card:hover .offer__media img,
+    .gallery__item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Ko je u sistemu isključio animacije, ne vidi ih ni ovde */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ========== Tablet (do 1024px) ========== */
+    @media (max-width: 1024px) {
+      .about__grid,
+      .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .about__collage {
+        max-width: 640px;
+      }
+
+      .form {
+        max-width: 640px;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ========== Mobilni (do 768px) ========== */
+    @media (max-width: 768px) {
+      :root {
+        --section-y: 72px;
+        --header-h: 68px;
+      }
+
+      body {
+        padding-bottom: 76px;
+      }
+
+      .section__head {
+        margin-bottom: 40px;
+      }
+
+      .section__title {
+        font-size: 32px;
+      }
+
+      /* Header i hamburger meni */
+      .header__toggle {
+        display: inline-flex;
+      }
+
+      .header__nav {
+        position: absolute;
+        top: 100%;
+        right: calc(-1 * var(--gutter));
+        left: calc(-1 * var(--gutter));
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 var(--gutter) 24px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header__nav.is-open {
+        display: flex;
+        animation: fadeIn 0.25s ease-out both;
+      }
+
+      .header__links {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .header__links a {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 17px;
+      }
+
+      .header__call {
+        display: none;
+      }
+
+      /* Hero */
+      .hero__title {
+        font-size: 40px;
+      }
+
+      .hero__lead {
+        font-size: 17px;
+      }
+
+      .facts__list {
+        grid-template-columns: 1fr;
+      }
+
+      .facts__item,
+      .facts__item:first-child,
+      .facts__item:last-child {
+        padding: 20px 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .facts__item:first-child {
+        border-top: 0;
+      }
+
+      /* Prilike */
+      .occasions__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .occasions__item,
+      .occasions__item:first-child,
+      .occasions__item:last-child {
+        padding: 32px 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .occasions__item:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .occasions__item:last-child {
+        padding-bottom: 0;
+      }
+
+      /* Ponuda, galerija, koraci */
+      .offer__tabs {
+        gap: 10px 20px;
+      }
+
+      .offer__grid,
+      .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .gallery__caption {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+      }
+
+      .steps__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .steps__cta {
+        margin-top: 40px;
+      }
+
+      /* Dve kolone postaju jedna */
+      .crystal__grid,
+      .about__grid,
+      .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      /* Kolaž postaje mreža 2x2 bez preklapanja */
+      .about__collage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding-bottom: 0;
+      }
+
+      .about__photo,
+      .about__photo:nth-child(n) {
+        margin: 0;
+      }
+
+      .about__photo:not(:last-child) .about__frame.placeholder {
+        padding-right: 8px;
+      }
+
+      /* Saveti: slika iznad teksta */
+      .tips__card {
+        grid-template-columns: 1fr;
+      }
+
+      .tips__media {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+      }
+
+      .tips__body {
+        padding: 24px;
+      }
+
+      /* Članak */
+      .article {
+        padding-top: 40px;
+      }
+
+      .article__top {
+        margin-bottom: 40px;
+      }
+
+      .article__head,
+      .article__body {
+        max-width: none;
+      }
+
+      .article__title {
+        font-size: 36px;
+      }
+
+      .article__media {
+        margin-bottom: 40px;
+      }
+
+      /* Kontakt */
+      .form {
+        padding: 24px;
+      }
+
+      .form__row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Završna traka i footer */
+      .closing {
+        padding: 72px 0;
+      }
+
+      .closing__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+      }
+
+      .closing__text {
+        font-size: 28px;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      /* Fiksna traka sa dva dugmeta */
+      .mobile-bar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 60;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+      }
+
+      .mobile-bar .btn {
+        padding: 13px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Preskoči na sadržaj</a>
+
+  <!-- ========== 1. HEADER ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="#pocetna" aria-label="Cvećara Milica, početna">
+        <span class="header__name">Cvećara Milica</span>
+        <span class="header__tagline">kod groblja Orlovača</span>
+      </a>
+
+      <button class="header__toggle" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="glavni-meni">
+        <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="header__nav" id="glavni-meni" aria-label="Glavni meni">
+        <ul class="header__links">
+          <li><a href="#ponuda">Ponuda</a></li>
+          <li><a href="#kako-poruciti">Kako poručiti</a></li>
+          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#saveti">Saveti</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a class="btn btn--primary header__call" href="tel:+381605337745">
+          <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Pozovi
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Sadržaj početne. JS ga sakriva kad je otvoren članak. -->
+    <div class="home" id="pocetna">
+
+      <!-- ========== 2. HERO ========== -->
+      <section class="hero" aria-labelledby="hero-naslov">
+        <img class="hero__bg" src="images/radnja-spolja.webp" alt="Cvećara Milica spolja, sa cvećem i vencima ispred radnje">
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <div class="hero__text">
+            <span class="eyebrow">Cvećara kod groblja Orlovača</span>
+            <h1 class="hero__title" id="hero-naslov">Venci i cveće za Orlovaču, iz radnje pored groblja</h1>
+            <p class="hero__lead">Radimo svaki dan od 7 do 14h. Pozovite ili pišite na Viber i recite šta vam treba.</p>
+            <div class="btn-row">
+              <a class="btn btn--light" href="tel:+381605337745">
+                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Pozovi
+              </a>
+              <a class="btn btn--outline-light" href="#ponuda">Pogledaj ponudu</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Traka sa 3 činjenice ispod hera -->
+      <div class="facts">
+        <div class="container">
+          <ul class="facts__list">
+            <li class="facts__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+              Svaki dan od 7 do 14h
+            </li>
+            <li class="facts__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Pored groblja Orlovača
+            </li>
+            <li class="facts__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c-3 0-5-2.4-5-6 1.9 0 3.6.9 5 2.6C13.4 6.9 15.1 6 17 6c0 3.6-2 6-5 6z"/><path d="M12 18c-2.6 0-4.6-1.4-5.2-3.8 2.6 0 4.6 1.4 5.2 3.8z"/></svg>
+              Venci, aranžmani i Crystal Art ukrasi
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========== 3. KAD VAM TREBA CVEĆE ZA GROBLJE ========== -->
+      <section class="section section--alt occasions" id="prilike" aria-labelledby="prilike-naslov">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="eyebrow">Prilike</span>
+            <h2 class="section__title" id="prilike-naslov">Kad vam treba cveće za groblje</h2>
+          </div>
+
+          <ul class="occasions__grid">
+            <li class="occasions__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="7"/><circle cx="12" cy="10" r="3.5"/><path d="M10 16.5 8.5 21.5M14 16.5l1.5 5"/></svg>
+              <h3 class="occasions__title">Sahrana</h3>
+              <p>Recite nam kad je sahrana i šta treba da piše na traci. Venac pravimo po vašoj želji.</p>
+            </li>
+            <li class="occasions__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>
+              <h3 class="occasions__title">Pomen i godišnjica</h3>
+              <p>Za 40 dana, pola godine ili godinu. Aranžman i ukras za grob uzimate na jednom mestu.</p>
+            </li>
+            <li class="occasions__item reveal">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+              <h3 class="occasions__title">Kad ne možete da dođete</h3>
+              <p><span class="ph">[PROVERITI: da li odnosi cveće na grob i šalje fotografiju]</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== 4. PONUDA ========== -->
+      <section class="section offer" id="ponuda" aria-labelledby="ponuda-naslov">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="eyebrow">Ponuda</span>
+            <h2 class="section__title" id="ponuda-naslov">Šta možete da poručite</h2>
+            <p>Kliknite na ono što vam treba i prebacićemo vas na upit. Cenu kažemo kad se čujemo.</p>
+          </div>
+
+          <div class="offer__tabs" role="group" aria-label="Filter ponude">
+            <button class="offer__tab is-active" type="button" data-filter="sve" aria-pressed="true">Sve</button>
+            <button class="offer__tab" type="button" data-filter="venci" aria-pressed="false">Venci</button>
+            <button class="offer__tab" type="button" data-filter="aranzmani" aria-pressed="false">Aranžmani za grob</button>
+            <button class="offer__tab" type="button" data-filter="cvece" aria-pressed="false">Cveće</button>
+            <button class="offer__tab" type="button" data-filter="crystal" aria-pressed="false">Crystal Art</button>
+          </div>
+
+          <ul class="offer__grid reveal">
+            <li class="offer__item" data-cat="venci">
+              <a class="offer__card" href="#kontakt" data-category="Venac">
+                <span class="offer__media"><img src="images/okrugli-venac.webp" alt="Okrugli venac sa crvenim ružama i belim cvećem, na stalku" loading="lazy"></span>
+                <span class="offer__name">Okrugli venac</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="venci">
+              <a class="offer__card" href="#kontakt" data-category="Venac">
+                <span class="offer__media"><img src="images/venac-srce.webp" alt="Venac u obliku srca od crvenih ruža" loading="lazy"></span>
+                <span class="offer__name">Venac srce</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="venci">
+              <a class="offer__card" href="#kontakt" data-category="Venac">
+                <span class="offer__media"><img src="images/beli-venac-na-stalku.webp" alt="Beli venac na stalku, sa ljiljanima i gerberima" loading="lazy"></span>
+                <span class="offer__name">Beli venac na stalku</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="aranzmani">
+              <a class="offer__card" href="#kontakt" data-category="Aranžman za grob">
+                <span class="offer__media"><img src="images/aranzman-za-grob.webp" alt="Dugačak aranžman sa crvenim gerberima, belim ljiljanima i ružama" loading="lazy"></span>
+                <span class="offer__name">Aranžman za grob</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="aranzmani">
+              <a class="offer__card" href="#kontakt" data-category="Aranžman za grob">
+                <span class="offer__media"><img src="images/aranzman-u-saksiji.webp" alt="Aranžman sa ljubičastim ružama i belim ljiljanima u beloj saksiji" loading="lazy"></span>
+                <span class="offer__name">Aranžman u saksiji</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="cvece">
+              <a class="offer__card" href="#kontakt" data-category="Cveće">
+                <span class="offer__media placeholder" role="img" aria-label="Fotografija: cveće za grob">Fotografija: cveće za grob</span>
+                <span class="offer__name">Cveće za grob</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="cvece">
+              <a class="offer__card" href="#kontakt" data-category="Cveće">
+                <span class="offer__media placeholder" role="img" aria-label="Fotografija: buket">Fotografija: buket</span>
+                <span class="offer__name">Buket</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+            <li class="offer__item" data-cat="crystal">
+              <a class="offer__card" href="#kontakt" data-category="Crystal Art ukras">
+                <span class="offer__media placeholder" role="img" aria-label="Fotografija: Crystal Art ukras">Fotografija: Crystal Art ukras</span>
+                <span class="offer__name">Crystal Art ukrasi</span>
+                <span class="offer__price">Cena na upit</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== 5. CRYSTAL ART ========== -->
+      <section class="section section--alt crystal" id="crystal-art" aria-labelledby="crystal-naslov">
+        <div class="container crystal__grid">
+          <div class="crystal__media placeholder reveal" role="img" aria-label="Fotografija: Crystal Art ukrasi na polici u radnji">Fotografija: Crystal Art ukrasi na polici u radnji</div>
+          <div class="crystal__text reveal">
+            <span class="eyebrow">U radnji</span>
+            <h2 class="section__title" id="crystal-naslov">Crystal Art ukrasi za grob</h2>
+            <p>Crystal Art ukrase držimo na polici u radnji. Ukras vidite uživo i uzmete ga u ruke pre nego što ga kupite.</p>
+            <p>Ako uzimate i venac ili aranžman, ukras odmah uklopite sa cvećem, po boji i veličini.</p>
+            <a class="link" href="https://crystalart.me" target="_blank" rel="noopener">
+              Ceo katalog na crystalart.me
+              <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 6. RADOVI SA ORLOVAČE ========== -->
+      <section class="section gallery" id="radovi" aria-labelledby="radovi-naslov">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="eyebrow">Radovi</span>
+            <h2 class="section__title" id="radovi-naslov">Sa Orlovače</h2>
+            <p>Venci i aranžmani koje smo pravili u radnji na Orlovači.</p>
+          </div>
+
+          <ul class="gallery__grid">
+            <li class="reveal gallery__item gallery__item--photo">
+              <img src="images/okrugli-venac.webp" alt="Okrugli venac za sahranu, na stalku u radnji" loading="lazy">
+              <span class="gallery__caption">Venac za sahranu</span>
+            </li>
+            <li class="reveal gallery__item gallery__item--ph">
+              <div class="placeholder" role="img" aria-label="Fotografija: uređen grob">Fotografija</div>
+              <span class="gallery__caption">Uređen grob</span>
+            </li>
+            <li class="reveal gallery__item gallery__item--photo">
+              <img src="images/aranzman-za-grob.webp" alt="Dugačak aranžman sa crvenim i belim cvećem" loading="lazy">
+              <span class="gallery__caption">Aranžman za pomen</span>
+            </li>
+            <li class="reveal gallery__item gallery__item--ph">
+              <div class="placeholder" role="img" aria-label="Fotografija: Crystal Art ukras">Fotografija</div>
+              <span class="gallery__caption">Crystal Art ukras</span>
+            </li>
+            <li class="reveal gallery__item gallery__item--photo">
+              <img src="images/venac-srce.webp" alt="Venac u obliku srca od crvenih ruža" loading="lazy">
+              <span class="gallery__caption">Venac srce</span>
+            </li>
+            <li class="reveal gallery__item gallery__item--ph">
+              <div class="placeholder" role="img" aria-label="Fotografija: grob zimi">Fotografija</div>
+              <span class="gallery__caption">Grob zimi</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== 7. KAKO PORUČITI ========== -->
+      <section class="section section--alt steps" id="kako-poruciti" aria-labelledby="koraci-naslov">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="eyebrow">Kako poručiti</span>
+            <h2 class="section__title" id="koraci-naslov">Tri koraka</h2>
+          </div>
+
+          <ol class="steps__grid">
+            <li class="steps__item reveal">
+              <span class="steps__num">01</span>
+              <h3 class="steps__title">Javite se</h3>
+              <p>Pozovite ili pišite na Viber, svaki dan od 7 do 14h. Na Viber možete da pošaljete i sliku venca koji vam se dopao.</p>
+            </li>
+            <li class="steps__item reveal">
+              <span class="steps__num">02</span>
+              <h3 class="steps__title">Dogovorimo izgled</h3>
+              <p>Kažete šta želite, a mi predložimo oblik i boje i kažemo vam cenu.</p>
+            </li>
+            <li class="steps__item reveal">
+              <span class="steps__num">03</span>
+              <h3 class="steps__title">Venac je spreman</h3>
+              <p><span class="ph">[PROVERITI: preuzimanje u radnji ili postavljanje na grob]</span></p>
+            </li>
+          </ol>
+
+          <a class="btn btn--primary steps__cta" href="tel:+381605337745">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Pozovi
+          </a>
+        </div>
+      </section>
+
+      <!-- ========== 8. O NAMA ========== -->
+      <section class="section about" id="o-nama" aria-labelledby="o-nama-naslov">
+        <div class="container about__grid">
+          <div class="about__text reveal">
+            <span class="eyebrow">O nama</span>
+            <h2 class="section__title" id="o-nama-naslov">Cvećara Milica</h2>
+            <p>Na Orlovači smo od <span class="ph">[OD KADA RADI]</span>. U radnji vas dočeka <span class="ph">[KO RADI U RADNJI]</span>.</p>
+            <p>Pošto smo odmah pored groblja, venac ne morate da vozite kroz grad. Pogledate ga u radnji i ponesete pravo do kapele.</p>
+            <p><span class="ph">[ŠTA JOJ JE VAŽNO, NJENIM REČIMA]</span></p>
+
+            <div class="about__hours">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+              <div>
+                <span class="about__hours-label">Radno vreme</span>
+                <span class="about__hours-value">Svaki dan od 7 do 14h</span>
+              </div>
+            </div>
+
+            <a class="btn btn--primary" href="#kontakt">Kontakt</a>
+          </div>
+
+          <ul class="about__collage reveal">
+            <li class="about__photo">
+              <div class="about__frame"><img src="images/radnja-spolja.webp" alt="Radnja spolja" loading="lazy"></div>
+            </li>
+            <li class="about__photo">
+              <div class="about__frame placeholder" role="img" aria-label="Fotografija: Milica u radnji">Milica u radnji</div>
+            </li>
+            <li class="about__photo">
+              <div class="about__frame placeholder" role="img" aria-label="Fotografija: venac u izradi">Venac u izradi</div>
+            </li>
+            <li class="about__photo">
+              <div class="about__frame placeholder" role="img" aria-label="Fotografija: polica sa ukrasima">Polica sa ukrasima</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== 9. SAVETI (kartice) ========== -->
+      <section class="section section--alt tips" id="saveti" aria-labelledby="saveti-naslov">
+        <div class="container">
+          <div class="section__head reveal">
+            <span class="eyebrow">Saveti</span>
+            <h2 class="section__title" id="saveti-naslov">Pre nego što poručite</h2>
+          </div>
+
+          <ul class="tips__list">
+            <li class="tips__card reveal">
+              <div class="tips__media"><img src="images/beli-venac-na-stalku.webp" alt="Beli venac na stalku" loading="lazy"></div>
+              <div class="tips__body">
+                <span class="eyebrow">Saveti</span>
+                <h3 class="tips__title"><a href="#clanak-venac">Kako izabrati venac za sahranu</a></h3>
+                <p>Oblik, boje i tekst na traci. Na kraju i šta da nam kažete kad zovete.</p>
+                <div class="tips__meta">
+                  <a class="link" href="#clanak-venac">
+                    Pročitaj
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                  <span class="reading">
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                    2 min čitanja
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="tips__card reveal">
+              <div class="tips__media"><img src="images/aranzman-u-saksiji.webp" alt="Aranžman u saksiji" loading="lazy"></div>
+              <div class="tips__body">
+                <span class="eyebrow">Saveti</span>
+                <h3 class="tips__title"><a href="#clanak-pomen">Cveće za pomen od 40 dana</a></h3>
+                <p>Šta ljudi nose na grob za pomen i kad je bolje da uzmete aranžman u saksiji.</p>
+                <div class="tips__meta">
+                  <a class="link" href="#clanak-pomen">
+                    Pročitaj
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                  <span class="reading">
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                    1 min čitanja
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="tips__card reveal">
+              <div class="tips__media placeholder" role="img" aria-label="Fotografija: grob zimi">Fotografija: grob zimi</div>
+              <div class="tips__body">
+                <span class="eyebrow">Saveti</span>
+                <h3 class="tips__title"><a href="#clanak-zima">Kako da grob ostane uredan preko zime</a></h3>
+                <p>Šta da sklonite pre mraza, šta ostaje zeleno do proleća i kako da sveća ne ugasne na vetru.</p>
+                <div class="tips__meta">
+                  <a class="link" href="#clanak-zima">
+                    Pročitaj
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                  <span class="reading">
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                    1 min čitanja
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="tips__card reveal">
+              <div class="tips__media placeholder" role="img" aria-label="Fotografija: ulaz u groblje Orlovača">Fotografija: ulaz u groblje Orlovača</div>
+              <div class="tips__body">
+                <span class="eyebrow">Saveti</span>
+                <h3 class="tips__title"><a href="#clanak-orlovaca">Kako da stignete do groblja Orlovača</a></h3>
+                <p>Koji autobusi staju kod groblja, kad radi uprava i gde je naša radnja.</p>
+                <div class="tips__meta">
+                  <a class="link" href="#clanak-orlovaca">
+                    Pročitaj
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                  <span class="reading">
+                    <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                    1 min čitanja
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ========== 10. KONTAKT I UPIT ========== -->
+      <section class="section contact" id="kontakt" aria-labelledby="kontakt-naslov">
+        <div class="container contact__grid">
+          <div class="contact__info reveal">
+            <span class="eyebrow">Kontakt</span>
+            <h2 class="section__title" id="kontakt-naslov">Javite se</h2>
+            <p>Najbrže je telefonom. Ako vam je lakše da pišete, javite se na Viber.</p>
+
+            <ul class="contact__list">
+              <li class="contact__row">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <span class="contact__label">Adresa</span>
+                  <span class="contact__value">Groblje Orlovača, lokal 30, Beograd</span><br>
+                  <span class="ph">[KAKO NAS NAĆI: kod kog ulaza je radnja]</span>
+                </div>
+              </li>
+              <li class="contact__row">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                <div>
+                  <span class="contact__label">Radno vreme</span>
+                  <span class="contact__value">Svaki dan od 7 do 14h</span>
+                </div>
+              </li>
+              <li class="contact__row">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div>
+                  <span class="contact__label">Telefon i Viber</span>
+                  <span class="contact__value"><a href="tel:+381605337745">060 533 7745</a></span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="btn-row">
+              <a class="btn btn--primary" href="tel:+381605337745">
+                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Pozovi
+              </a>
+              <a class="btn btn--outline" href="viber://chat?number=%2B381605337745">
+                <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+                Viber
+              </a>
+            </div>
+
+            <div class="contact__map placeholder" role="img" aria-label="Mapa: lokacija radnje kod groblja Orlovača">Mapa: lokacija radnje kod groblja Orlovača</div>
+          </div>
+
+          <form class="form reveal" id="upit" novalidate>
+            <h3 class="form__title">Pošaljite upit</h3>
+            <p class="form__intro">Ostavite broj i šta vam treba. Javljamo se u radno vreme, od 7 do 14h.</p>
+
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="upit-ime">Ime</label>
+                <input class="form__input" id="upit-ime" name="ime" type="text" autocomplete="name">
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="upit-telefon">Telefon</label>
+                <input class="form__input" id="upit-telefon" name="telefon" type="tel" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="upit-sta">Šta vam treba</label>
+                <select class="form__input" id="upit-sta" name="sta">
+                  <option value="">Izaberite</option>
+                  <option value="Venac">Venac</option>
+                  <option value="Aranžman za grob">Aranžman za grob</option>
+                  <option value="Cveće">Cveće</option>
+                  <option value="Crystal Art ukras">Crystal Art ukras</option>
+                  <option value="Nešto drugo">Nešto drugo</option>
+                </select>
+              </div>
+              <div class="form__field">
+                <label class="form__label" for="upit-datum">Za koji datum</label>
+                <input class="form__input" id="upit-datum" name="datum" type="date">
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="upit-napomena">Napomena</label>
+              <textarea class="form__input" id="upit-napomena" name="napomena" placeholder="npr. tekst za traku na vencu ili broj parcele"></textarea>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Pošalji upit</button>
+            <p class="form__note" id="upit-poruka" role="status" hidden>Ovo je demo, forma još ne šalje poruke.</p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========== 11. ZAVRŠNA TRAKA ========== -->
+      <section class="closing" aria-label="Pozovite nas">
+        <div class="container closing__inner reveal">
+          <p class="closing__text">Radimo i nedeljom, od 7 ujutru. Pozovite do 14h i venac dogovorimo u jednom razgovoru.</p>
+          <a class="btn btn--primary" href="tel:+381605337745">
+            <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Pozovi
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========== 9b. STRANICE ČLANAKA ========== -->
+    <!-- Članci su sakriveni. JS ih prikazuje kad je u adresi #clanak-venac, #clanak-pomen, #clanak-zima ili #clanak-orlovaca. -->
+    <div class="articles">
+
+      <!-- Članak: venac za sahranu -->
+      <article class="article" id="clanak-venac" data-title="Kako izabrati venac za sahranu" aria-labelledby="clanak-venac-naslov" hidden>
+        <div class="container">
+          <div class="article__top">
+            <nav class="article__crumbs" aria-label="Putanja">
+              <a href="#pocetna">Početna</a> / <a href="#saveti">Saveti</a> / <span aria-current="page">Kako izabrati venac za sahranu</span>
+            </nav>
+            <button class="article__share" type="button">
+              <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 13.3l7.6 4.4M15.8 6.3l-7.6 4.4"/></svg>
+              <span class="article__share-label" aria-live="polite">Podeli</span>
+            </button>
+          </div>
+
+          <header class="article__head">
+            <div class="article__meta-row">
+              <span class="eyebrow">Saveti</span>
+              <span class="reading">
+                <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                2 min čitanja
+              </span>
+            </div>
+            <h1 class="article__title" id="clanak-venac-naslov">Kako izabrati venac za sahranu</h1>
+            <p class="article__byline">12.11.2026. · Cvećara Milica</p>
+          </header>
+
+          <div class="article__media placeholder" role="img" aria-label="Fotografija za članak: venac na stalku">Fotografija za članak: venac na stalku</div>
+
+          <div class="article__body">
+            <p>Venac obično poručujete dan ili dva pred sahranu, kad imate mnogo drugih stvari na glavi. Treba da odlučite tri stvari: oblik, boje i tekst na traci. Evo kako to obično ide.</p>
+            <p>Okrugli venac na stalku je najčešći izbor. Stoji uspravno pored kapele, a posle sahrane na grobu. Uz njega ne grešite, bilo da ga šaljete od porodice, prijatelja ili kolega.</p>
+            <p>Srce obično šalju najbliži: supružnik, deca ili roditelji. Ako venac ide od kolega ili komšija, bolje je da izaberete okrugli.</p>
+            <p>Bela i krem boja idu uz svakoga. Crvene ruže znače ljubav, pa ih češće biraju najbliži. Ako ne znate šta bi pokojnik voleo, predložićemo vam mirnu kombinaciju u beloj i zelenoj.</p>
+
+            <blockquote class="article__quote">
+              <p>Na traci napišite ono što biste rekli naglas. Kratko je sasvim dovoljno.</p>
+            </blockquote>
+
+            <p>Na traci obično piše „Poslednji pozdrav“ i od koga je venac. Na primer „Poslednji pozdrav od supruge Jelene i dece“ ili „Poslednji pozdrav od kolega iz škole“.</p>
+            <p>Imena nam pošaljite napisana, najlakše porukom na Viber. Tako nema greške u slovima, a na traku ide tačno ono što ste napisali.</p>
+            <p>Kad zovete, recite nam datum i sat sahrane, oblik venca, boje i tekst za traku. Ako imate okvirnu cenu na umu, recite i nju, pa ćemo predložiti venac koji joj odgovara.</p>
+            <p>Ako i dalje niste sigurni, pozovite i pitajte. U radnji smo svaki dan od 7 do 14h.</p>
+
+            <p class="article__sign">Cvećara Milica, kod groblja Orlovača</p>
+
+            <div class="btn-row article__actions">
+              <a class="btn btn--outline" href="#ponuda" data-filter-link="venci">Pogledaj vence</a>
+              <a class="btn btn--outline" href="#kontakt" data-category="Venac">Pošalji upit</a>
+            </div>
+            <a class="link article__back" href="#saveti">Nazad na sve savete</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Članak: pomen od 40 dana -->
+      <article class="article" id="clanak-pomen" data-title="Cveće za pomen od 40 dana" aria-labelledby="clanak-pomen-naslov" hidden>
+        <div class="container">
+          <div class="article__top">
+            <nav class="article__crumbs" aria-label="Putanja">
+              <a href="#pocetna">Početna</a> / <a href="#saveti">Saveti</a> / <span aria-current="page">Cveće za pomen od 40 dana</span>
+            </nav>
+            <button class="article__share" type="button">
+              <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 13.3l7.6 4.4M15.8 6.3l-7.6 4.4"/></svg>
+              <span class="article__share-label" aria-live="polite">Podeli</span>
+            </button>
+          </div>
+
+          <header class="article__head">
+            <div class="article__meta-row">
+              <span class="eyebrow">Saveti</span>
+              <span class="reading">
+                <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                1 min čitanja
+              </span>
+            </div>
+            <h1 class="article__title" id="clanak-pomen-naslov">Cveće za pomen od 40 dana</h1>
+            <p class="article__byline">12.11.2026. · Cvećara Milica</p>
+          </header>
+
+          <div class="article__media placeholder" role="img" aria-label="Fotografija za članak: aranžman na grobu">Fotografija za članak: aranžman na grobu</div>
+
+          <div class="article__body">
+            <p>Za pomen od 40 dana, pola godine ili godinu ljudi retko nose venac. Na grob obično ide manji aranžman, cveće u saksiji ili nekoliko cvetova u vazi.</p>
+            <p>Sveže cveće lepo izgleda tog dana, ali uvene za nekoliko dana. Ako ne dolazite na grob često, uzmite aranžman u saksiji. Duže izdrži, pa grob ne stoji sa uvelim cvećem do sledeće posete.</p>
+
+            <blockquote class="article__quote">
+              <p>Za pomen ne treba mnogo cveća. Dovoljno je da grob izgleda uredno.</p>
+            </blockquote>
+
+            <p>Uz cveće možete da uzmete i Crystal Art ukras. On ostaje na grobu i kad cveća više nema.</p>
+            <p>Kad zovete, recite nam datum pomena i koliko mesta ima na ploči, pa ćemo predložiti aranžman koji tu staje.</p>
+
+            <p class="article__sign">Cvećara Milica, kod groblja Orlovača</p>
+
+            <div class="btn-row article__actions">
+              <a class="btn btn--outline" href="#ponuda" data-filter-link="aranzmani">Pogledaj aranžmane</a>
+              <a class="btn btn--outline" href="#kontakt" data-category="Aranžman za grob">Pošalji upit</a>
+            </div>
+            <a class="link article__back" href="#saveti">Nazad na sve savete</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Članak: grob preko zime -->
+      <article class="article" id="clanak-zima" data-title="Kako da grob ostane uredan preko zime" aria-labelledby="clanak-zima-naslov" hidden>
+        <div class="container">
+          <div class="article__top">
+            <nav class="article__crumbs" aria-label="Putanja">
+              <a href="#pocetna">Početna</a> / <a href="#saveti">Saveti</a> / <span aria-current="page">Kako da grob ostane uredan preko zime</span>
+            </nav>
+            <button class="article__share" type="button">
+              <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 13.3l7.6 4.4M15.8 6.3l-7.6 4.4"/></svg>
+              <span class="article__share-label" aria-live="polite">Podeli</span>
+            </button>
+          </div>
+
+          <header class="article__head">
+            <div class="article__meta-row">
+              <span class="eyebrow">Saveti</span>
+              <span class="reading">
+                <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                1 min čitanja
+              </span>
+            </div>
+            <h1 class="article__title" id="clanak-zima-naslov">Kako da grob ostane uredan preko zime</h1>
+            <p class="article__byline">12.11.2026. · Cvećara Milica</p>
+          </header>
+
+          <div class="article__media placeholder" role="img" aria-label="Fotografija za članak: grob zimi sa vencem od četinara">Fotografija za članak: grob zimi sa vencem od četinara</div>
+
+          <div class="article__body">
+            <p>Pre prvog mraza sklonite uvelo cveće i stare vence. Kad ih natopi kiša i sneg, trunu i ostavljaju mrlje na ploči.</p>
+            <p>Za zimu birajte aranžman od četinara ili veštačkog cveća. Jelka i bor ostaju zeleni do proleća, a mraz im ne smeta.</p>
+
+            <blockquote class="article__quote">
+              <p>Grob koji sredite u novembru izgleda uredno i u februaru.</p>
+            </blockquote>
+
+            <p>Sveću stavite u kandilo sa poklopcem. Na otvorenom je vetar brzo ugasi, a u kandilu gori do kraja.</p>
+            <p>Ako želite nešto što ne vene, pogledajte Crystal Art ukrase u radnji kad sledeći put dođete na Orlovaču.</p>
+
+            <p class="article__sign">Cvećara Milica, kod groblja Orlovača</p>
+
+            <div class="btn-row article__actions">
+              <a class="btn btn--outline" href="#ponuda" data-filter-link="crystal">Pogledaj Crystal Art ukrase</a>
+              <a class="btn btn--outline" href="#kontakt" data-category="Crystal Art ukras">Pošalji upit</a>
+            </div>
+            <a class="link article__back" href="#saveti">Nazad na sve savete</a>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Članak: kako stići do groblja Orlovača -->
+      <article class="article" id="clanak-orlovaca" data-title="Kako da stignete do groblja Orlovača" aria-labelledby="clanak-orlovaca-naslov" hidden>
+        <div class="container">
+          <div class="article__top">
+            <nav class="article__crumbs" aria-label="Putanja">
+              <a href="#pocetna">Početna</a> / <a href="#saveti">Saveti</a> / <span aria-current="page">Kako da stignete do groblja Orlovača</span>
+            </nav>
+            <button class="article__share" type="button">
+              <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 13.3l7.6 4.4M15.8 6.3l-7.6 4.4"/></svg>
+              <span class="article__share-label" aria-live="polite">Podeli</span>
+            </button>
+          </div>
+
+          <header class="article__head">
+            <div class="article__meta-row">
+              <span class="eyebrow">Saveti</span>
+              <span class="reading">
+                <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
+                1 min čitanja
+              </span>
+            </div>
+            <h1 class="article__title" id="clanak-orlovaca-naslov">Kako da stignete do groblja Orlovača</h1>
+            <p class="article__byline">12.11.2026. · Cvećara Milica</p>
+          </header>
+
+          <div class="article__media placeholder" role="img" aria-label="Fotografija za članak: kupola iznad glavne zgrade">Fotografija za članak: kupola iznad glavne zgrade</div>
+
+          <div class="article__body">
+            <p>Orlovača je jedno od najvećih groblja u Beogradu. Nalazi se na južnom kraju grada, na Čukarici, uz Ibarsku magistralu.</p>
+            <p>Groblje su počeli da grade 1988, a prve sahrane bile su 1991. godine. Kupolu iznad glavne zgrade sa kapelama napravili su 2008. Na groblju je i crkva Svetog velikomučenika Prokopija.</p>
+            <p>Autobusom stižete linijama 502, 531, 532 i 533. Linija 502 kreće sa Miljakovca, a 531, 532 i 533 sa Banovog brda, preko Žarkova.</p>
+
+            <blockquote class="article__quote">
+              <p>Groblje je veliko. Ako dolazite na sahranu, krenite malo ranije.</p>
+            </blockquote>
+
+            <p>Kolima dolazite Ibarskom magistralom. Uprava groblja radi od 7 do 15h, osim nedeljom, a telefon je 011 2560 704.</p>
+            <p>Naša radnja je u lokalu 30. Od autobuske stanice do nas ima <span class="ph">[KOLIKO JE RADNJA OD STANICE]</span>. Radimo svaki dan od 7 do 14h, i nedeljom.</p>
+            <p>Ako dolazite na sahranu ili pomen, pozovite nas pre nego što krenete. Venac ili aranžman dogovorimo dok ste još na putu.</p>
+
+            <p class="article__sign">Cvećara Milica, kod groblja Orlovača</p>
+
+            <div class="btn-row article__actions">
+              <a class="btn btn--outline" href="#ponuda" data-filter-link="sve">Pogledaj ponudu</a>
+              <a class="btn btn--outline" href="#kontakt">Pošalji upit</a>
+            </div>
+            <a class="link article__back" href="#saveti">Nazad na sve savete</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ========== 12. FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="footer__name">Cvećara Milica</span>
+          <p>kod groblja Orlovača</p>
+        </div>
+        <div>
+          <span class="footer__heading">Radnja</span>
+          <p>Groblje Orlovača, lokal 30, Beograd</p>
+          <p>Svaki dan od 7 do 14h</p>
+        </div>
+        <div>
+          <span class="footer__heading">Telefon i Viber</span>
+          <p><a href="tel:+381605337745">060 533 7745</a></p>
+        </div>
+        <div>
+          <span class="footer__heading">Stranice</span>
+          <ul class="footer__links">
+            <li><a href="#ponuda">Ponuda</a></li>
+            <li><a href="#kako-poruciti">Kako poručiti</a></li>
+            <li><a href="#o-nama">O nama</a></li>
+            <li><a href="#saveti">Saveti</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Cvećara Milica</span>
+        <span>Izrada sajta: <a href="https://mirandev.com" target="_blank" rel="noopener">mirandev.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fiksna traka na dnu ekrana (samo mobilni) -->
+  <div class="mobile-bar">
+    <a class="btn btn--primary" href="tel:+381605337745">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Pozovi
+    </a>
+    <a class="btn btn--outline" href="viber://chat?number=%2B381605337745">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+      Viber
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      // ---------- Meni na mobilnom ----------
+      var toggle = document.querySelector('.header__toggle');
+      var nav = document.querySelector('.header__nav');
+
+      function setMenu(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
+        nav.classList.toggle('is-open', open);
+      }
+
+      toggle.addEventListener('click', function () {
+        setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setMenu(false);
+        });
+      });
+
+      // ---------- Tabovi u ponudi ----------
+      var tabs = document.querySelectorAll('.offer__tab');
+      var items = document.querySelectorAll('.offer__item');
+
+      function setFilter(cat) {
+        tabs.forEach(function (tab) {
+          var active = tab.dataset.filter === cat;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-pressed', String(active));
+        });
+        items.forEach(function (item) {
+          item.hidden = cat !== 'sve' && item.dataset.cat !== cat;
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          setFilter(tab.dataset.filter);
+        });
+      });
+
+      // Dugme na kraju članka uključuje filter u ponudi
+      document.querySelectorAll('[data-filter-link]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setFilter(link.dataset.filterLink);
+        });
+      });
+
+      // ---------- Kartica ili dugme unapred bira kategoriju u formi ----------
+      var select = document.getElementById('upit-sta');
+
+      document.querySelectorAll('[data-category]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          select.value = el.dataset.category;
+        });
+      });
+
+      // ---------- Forma (demo, ne šalje ništa) ----------
+      var form = document.getElementById('upit');
+      var note = document.getElementById('upit-poruka');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        note.hidden = false;
+      });
+
+      // ---------- Članci preko hash-a ----------
+      var home = document.getElementById('pocetna');
+      var articles = document.querySelectorAll('.article');
+      var defaultTitle = document.title;
+      var articleOpen = false;
+      var clickedHash = null;
+
+      // Pamtimo hash linka na koji je kliknuto, da razlikujemo klik od dugmeta za nazad
+      document.addEventListener('click', function (event) {
+        var link = event.target.closest('a[href^="#"]');
+        if (link) {
+          clickedHash = link.getAttribute('href');
+        }
+      });
+
+      function route() {
+        var id = location.hash.slice(1);
+        var target = id ? document.getElementById(id) : null;
+
+        if (target && target.classList.contains('article')) {
+          home.hidden = true;
+          articles.forEach(function (article) {
+            article.hidden = article !== target;
+          });
+          articleOpen = true;
+          document.title = target.dataset.title + ' | Cvećara Milica';
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          clickedHash = null;
+          return;
+        }
+
+        if (articleOpen) {
+          articles.forEach(function (article) {
+            article.hidden = true;
+          });
+          home.hidden = false;
+          articleOpen = false;
+          document.title = defaultTitle;
+
+          // Klik na meni ide na tu sekciju, a nazad u pregledaču na Savete
+          var fromClick = clickedHash !== null && clickedHash === location.hash;
+          var scrollTarget = fromClick && target ? target : document.getElementById('saveti');
+          scrollTarget.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+
+        clickedHash = null;
+      }
+
+      window.addEventListener('hashchange', route);
+      route();
+
+      // ---------- Elementi se pojave kad uđu u ekran ----------
+      var revealItems = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealItems.forEach(function (item) {
+          observer.observe(item);
+        });
+      } else {
+        revealItems.forEach(function (item) {
+          item.classList.add('is-visible');
+        });
+      }
+
+      // ---------- Dugme Podeli ----------
+      function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(text);
+        }
+        var field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'absolute';
+        field.style.left = '-9999px';
+        document.body.appendChild(field);
+        field.select();
+        try {
+          document.execCommand('copy');
+        } finally {
+          document.body.removeChild(field);
+        }
+        return Promise.resolve();
+      }
+
+      document.querySelectorAll('.article__share').forEach(function (button) {
+        var label = button.querySelector('.article__share-label');
+        button.addEventListener('click', function () {
+          copyText(location.href).catch(function () {}).then(function () {
+            label.textContent = 'Link je kopiran';
+            setTimeout(function () {
+              label.textContent = 'Podeli';
+            }, 1200);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
